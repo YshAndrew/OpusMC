@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Minecraft JS 复刻版</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%237a5232'/%3E%3Crect width='16' height='5' fill='%235c9e3a'/%3E%3C/svg%3E">
 <style>
   html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
   canvas { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; image-rendering: pixelated; }
@@ -11,6 +12,8 @@
   #textinput { position: absolute; display: none; background: transparent; border: none; outline: none; color: #fff;
     font-family: "Microsoft YaHei", "PingFang SC", sans-serif; padding: 0 2px; text-shadow: 2px 2px 0 #3f3f3f; z-index: 5; }
   #err { position: absolute; left: 10%; top: 30%; width: 80%; color: #fff; font: 18px sans-serif; white-space: pre-wrap; display: none; text-align: center; }
+  #mobilehint { position: absolute; left: 8px; right: 8px; bottom: 34px; display: none; padding: 6px 8px; text-align: center;
+    color: #fff; background: rgba(0,0,0,.6); font: 12px/1.4 "Microsoft YaHei", sans-serif; z-index: 6; }
   #boot { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; font: 16px "Microsoft YaHei", sans-serif; background: #ef323d; }
 </style>
 </head>
@@ -20,6 +23,7 @@
 <input id="textinput" type="text" autocomplete="off" spellcheck="false">
 <div id="boot">Minecraft JS 复刻版 · 正在加载…</div>
 <div id="err"></div>
+<div id="mobilehint">需要键盘鼠标 · 请用电脑打开（暂不支持触屏）</div>
 <script src="js/assets.js"></script>
 <script src="js/util.js"></script>
 <script src="js/blocks.js"></script>
@@ -36,6 +40,8 @@
 <script>
   // hide boot splash once the title screen is up
   (function wait() { if (window.game && window.game.state !== 'boot') document.getElementById('boot').style.display = 'none'; else setTimeout(wait, 100); })();
+  // touch devices: no keyboard/mouse controls yet, show a hint
+  if (window.matchMedia && matchMedia('(pointer: coarse)').matches) document.getElementById('mobilehint').style.display = 'block';
 </script>
 </body>
 </html>
