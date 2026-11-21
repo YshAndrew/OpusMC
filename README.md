@@ -5,10 +5,17 @@
 
 > 这是本项目由 [Claude Code](https://claude.com/claude-code) 生成的**第一个版本**的存档，按原样开源。
 
+## 在线试玩
+
+<https://yshandrew.github.io/OpusMC/>
+
+仓库已配置 GitHub Actions（`.github/workflows/static.yml`），推送到 `main` 分支会自动把 `game/` 目录部署到 GitHub Pages，
+也可以在 Actions 页面手动运行 workflow。需要键盘和鼠标，请用桌面浏览器打开（手机端暂不支持操作）。
+
 ## 启动方法
 
 ```bash
-git clone https://github.com/X1aoZhe/OpusMC.git
+git clone https://github.com/YshAndrew/OpusMC.git
 ```
 
 1. **双击 `启动游戏.bat`**（或直接用浏览器打开 `game/index.html`）。无需安装、无需构建。
