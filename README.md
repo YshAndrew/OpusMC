@@ -1,16 +1,16 @@
-# X1aoZhe's OpusMC
+# OpusMC · 浏览器里的 Minecraft 复刻版
 
 一个在浏览器里运行的 Minecraft 复刻作品：纯 JavaScript + WebGL2 从零实现（无游戏引擎、无第三方库），
 画面素材来自 Minecraft 26.2 官方材质（`tools/build_assets.py` 从 `26.2.jar` 中提取并打包）。
 
-> 这是本项目由 [Claude Code](https://claude.com/claude-code) 生成的**第一个版本**的存档，按原样开源。
+**在线试玩**：<https://yshandrew.github.io/OpusMC/>　｜　**仓库**：<https://github.com/YshAndrew/OpusMC>
 
-## 在线试玩
+用最新版 Chrome / Edge 打开，需要键盘和鼠标（手机端暂不支持操作）。
 
-<https://yshandrew.github.io/OpusMC/>
+## 部署
 
-仓库已配置 GitHub Actions（`.github/workflows/static.yml`），推送到 `main` 分支会自动把 `game/` 目录部署到 GitHub Pages，
-也可以在 Actions 页面手动运行 workflow。需要键盘和鼠标，请用桌面浏览器打开（手机端暂不支持操作）。
+仓库配置了 GitHub Actions（`.github/workflows/static.yml`）：推送到 `main` 会自动把 `game/` 目录发布到 GitHub Pages，
+也可以在 Actions 页面手动运行 workflow。
 
 ## 启动方法
 
@@ -107,6 +107,7 @@ py tools/build_assets.py "<.minecraft>/versions/26.2/26.2.jar"
 
 ## 许可与声明
 
+- 本仓库由 **YshAndrew** 维护：代码初版由 [Claude Code](https://claude.com/claude-code) 生成，之后持续修改与测试。
 - 本仓库的**源代码**（`game/js/` 下除 `assets.js` 以外的文件、`game/index.html`、`tools/`、启动脚本）以 [MIT 许可证](LICENSE) 开源。
 - `game/js/assets.js` 中的贴图、GUI 与字体素材提取自 Minecraft 官方资源，版权归 **Mojang Studios / Microsoft** 所有，
   **不**适用 MIT 许可证，仅为演示用途收录。如权利方要求，将予以移除。
